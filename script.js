@@ -7,29 +7,41 @@ var cards=[
 
 
 
-
-
 // All code will wait until the DOM is ready!
 $(document).ready(function(){
-	var gridSize = 4;
+	var gridSize =6;
 
 	
 
 	var mgHTML = '';
 	var cardCounter=0;
 	
+	var aCard=[];
 
+	for(var i=0;i<cards.length;i++){
+		aCard.push(cards[i]);
+		aCard.push(cards[i]);
+	}
+
+function shuffleCards(){
+
+for(var i=0;i<cards.length;i++){
+	var card1=Math.floor(Math.random()*cards.length);
+	var card2=Math.floor(Math.random()*cards.length);
+	var temp=aCard[card1];
+	aCard[card1]=aCard[card2];
+	aCard[card2]=temp;
+}
+
+};
+
+	shuffleCards();
 
 	for(var i = 0; i < gridSize; i++){
-		if(i<2){
-			card=cards[0]
-		}else{
-			card=cards[1];
-			}
-
+		
 		mgHTML += '<div class="mgTile col-sm-3">';
 			mgHTML += '<div class="mgTileInner">';
-				mgHTML += '<div class="mgFront">'+card+'</div>';
+				mgHTML += '<div class="mgFront">'+aCard[i]+'</div>';
 				mgHTML += '<div class="mgBack"></div>';
 			mgHTML += '</div>';
 		mgHTML += '</div>';
@@ -48,16 +60,16 @@ $('.mgTileInner').click(function(){
 
 	}if(cardsUp.find('img')[0].src==cardsUp.find('img')[1].src){
 		//the pics are the same this is a match!
-cardsUp.addClass('matched');
+	cardsUp.addClass('matched');
 
 
 
 	}else{
 		//the user has flipped two cardsa nd they dont match
 		//flip cards back over 
-		cardsUp.removeClass('flip');
+		$(cardsUp).delay(1000).removeClass('flip');
 
-	}1000
+	}   
 
 
 	});
@@ -69,6 +81,7 @@ cardsUp.addClass('matched');
     animateDiv();
     
 });
+
 
 function makeNewPosition(){
     
@@ -108,3 +121,6 @@ function calcSpeed(prev, next) {
     return speed;
 
 }
+
+
+
