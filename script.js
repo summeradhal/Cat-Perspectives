@@ -9,7 +9,7 @@ var cards=[
 
 // All code will wait until the DOM is ready!
 $(document).ready(function(){
-	var gridSize =6;
+	var gridSize =8;
 
 	
 
@@ -19,15 +19,17 @@ $(document).ready(function(){
 	var aCard=[];
 
 	for(var i=0;i<cards.length;i++){
+		
 		aCard.push(cards[i]);
 		aCard.push(cards[i]);
+
 	}
 
 function shuffleCards(){
 
-for(var i=0;i<cards.length;i++){
-	var card1=Math.floor(Math.random()*cards.length);
-	var card2=Math.floor(Math.random()*cards.length);
+for(var i=0;i<aCard.length;i++){
+	var card1=Math.floor(Math.random()*aCard.length);
+	var card2=Math.floor(Math.random()*aCard.length);
 	var temp=aCard[card1];
 	aCard[card1]=aCard[card2];
 	aCard[card2]=temp;
@@ -62,6 +64,9 @@ $('.mgTileInner').click(function(){
 		//the pics are the same this is a match!
 	cardsUp.addClass('matched');
 
+		
+
+
 
 
 	}else{
@@ -73,8 +78,6 @@ $('.mgTileInner').click(function(){
 
 
 	});
-
-
 
 
 
