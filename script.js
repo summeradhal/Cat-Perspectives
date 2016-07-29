@@ -66,7 +66,7 @@ $('.mgTileInner').click(function(){
 
 		
 	
-		 $('.matched').html('');
+		 $('.matched').html('<image src="Images/weirdo.png">');
 
 
 
