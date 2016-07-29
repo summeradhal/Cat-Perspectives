@@ -42,7 +42,7 @@ for(var i=0;i<aCard.length;i++){
 	for(var i = 0; i < gridSize; i++){
 		
 		mgHTML += '<div class="mgTile col-sm-3">';
-			mgHTML += '<div class="mgTileInner">';
+			mgHTML += '<div class="mgTileInner unmatched">';
 				mgHTML += '<div class="mgFront">'+aCard[i]+'</div>';
 				mgHTML += '<div class="mgBack"></div>';
 			mgHTML += '</div>';
@@ -55,17 +55,17 @@ $('.mg-contents').html(mgHTML);
 
 $('.mgTileInner').click(function(){
 	$(this).toggleClass('flip');
-	cardsUp=$('.mgTileInner.flip').length;
+	cardsUp=$('.mgTileInner.flip.unmatched').length;
 	console.log(cardsUp);
 	var cardsUp=$('.flip');
 	if(cardsUp.length==2){
 
-	}if(cardsUp.find('img')[0].src==cardsUp.find('img')[1].src){
+}
+	if(cardsUp.find('img')[0].src==cardsUp.find('img')[1].src){
 		//the pics are the same this is a match!
-	cardsUp.addClass('matched');
+		cardsUp.addClass('matched');
+		cardsUp.removeClass('unmatched');
 
-		
-	
 		 $('.matched').html('<image src="Images/weirdo.png">');
 
 
@@ -82,7 +82,7 @@ $('.mgTileInner').click(function(){
 		// 	var messageImage='<image src="weirdCat.png"></image>';
 		// 	$(.message).html(messageImage);
 		// }
-
+	
 	});
 
 
@@ -130,6 +130,8 @@ function calcSpeed(prev, next) {
     return speed;
 
 }
+
+
 
 
 
