@@ -1,0 +1,74 @@
+body{
+	background:url("Images/spacecat.jpg") no-repeat;
+	background-size:cover;
+	
+}
+
+body img{
+
+width:100%;
+height:100%;
+
+}
+.mgTile img{
+	max-width:100%;
+
+}
+
+.mgTile{
+	height:300px;
+	perspective:500px;
+	min-width:300px;
+	
+
+}
+
+.mgTileInner{
+width:300px;
+/* the children will eventually be absolute */
+position:relative;
+transform-style:preserve-3d;
+transition:all .5s;
+
+}
+
+
+.mgFront, .mgBack{
+position:absolute;
+top:0%;
+left:0%;
+
+backface-visibility:hidden;
+
+
+
+}
+
+
+.mgFront{
+	/* 50% 50% puts it in the middle of the page not the very back */
+transform: rotateY(180deg);
+
+
+}
+
+.mgBack{
+	background:url("images/cat.png") 50% 50% no-repeat;
+	width:100%;
+	height:200px;
+
+}
+
+.flip{
+
+	transform:rotateY(-180deg);
+
+}
+
+
+.weirdCat{
+	width:100px;
+	height:100px;
+position:fixed;
+	
+}
