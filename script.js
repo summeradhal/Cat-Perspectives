@@ -65,6 +65,8 @@ $('.mgTileInner').click(function(){
 	cardsUp.addClass('matched');
 
 		
+	
+		 $('.matched').html('');
 
 
 
@@ -75,7 +77,11 @@ $('.mgTileInner').click(function(){
 		$(cardsUp).delay(1000).removeClass('flip');
 
 	}   
-
+		// if(cardsUp.length==0){
+		// 	cardsUp.addClass('message');
+		// 	var messageImage='<image src="weirdCat.png"></image>';
+		// 	$(.message).html(messageImage);
+		// }
 
 	});
 
@@ -124,6 +130,9 @@ function calcSpeed(prev, next) {
     return speed;
 
 }
+
+
+
 
 
 
